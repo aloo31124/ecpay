@@ -21,7 +21,6 @@ const options = {
   IgnorePayment: [],
   IsProjectContractor: false,
 };
-let TradeNo;
 
 router.get('/', (req, res) => {
   console.log(" ec pay start!");
@@ -29,9 +28,10 @@ router.get('/', (req, res) => {
   // https://github.com/ECPay/ECPayAIO_Node.js/blob/master/ECPAY_Payment_node_js/conf/config-example.js
 
   
-  MerchantTradeDate = '2023/03/12 15:30:23' //日期固定
+  let MerchantTradeDate = '2024/03/12 15:30:23' //日期固定
+  let MerchantTradeNo = 'test' + new Date().getTime(); //test1704086851855
   let base_param = {
-    MerchantTradeNo: 'f0a0d7e9fae1bb72bc92', //請帶20碼uid, ex: f0a0d7e9fae1bb72bc93
+    MerchantTradeNo: MerchantTradeNo, //請帶20碼uid, ex: f0a0d7e9fae1bb72bc93
     MerchantTradeDate,
     TotalAmount: '87',
     TradeDesc: '測試交易描述',
